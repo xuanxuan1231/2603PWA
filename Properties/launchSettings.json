@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "2603PWA (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "2603PWA (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
