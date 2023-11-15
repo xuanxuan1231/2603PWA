@@ -27,24 +27,23 @@ namespace _2603PWA
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
     /// </summary>
+    
     public sealed partial class MainWindow : Window
     {
+        private AppWindow m_AppWindow;
         public MainWindow()
         {
             this.InitializeComponent();
-            MyWebView.NavigationStarting += EnsureHttps;
-            // no UIElement is set for titlebar, fallback titlebar is created
-            Window window = App.MainWindow;
-            window.ExtendsContentIntoTitleBar = true;
-            //window.SetTitleBar(null);  // this line is optional as by it is null by default
+            //MyWebView.NavigationStarting += EnsureHttps;
+            
         }
 
 
         //private void myButton_Click(object sender, RoutedEventArgs e)
         //{
-            //myButton.Content = "Clicked";
+        //myButton.Content = "Clicked";
         //}
-        private void myButton_Click(object sender, RoutedEventArgs e)
+        /*private void myButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -66,30 +65,27 @@ namespace _2603PWA
             }
             else
             {
-                addressBar.Text = uri;
+                MyWebView.Source = new Uri(uri);
             }
+        }*/
+
+        private void Hugo_Click(object sender, RoutedEventArgs e)
+        {
+            MyWebView.Source = new Uri("https://xuanxuan1231.tk");
         }
 
-        private void hugo_Click(object sender, RoutedEventArgs e)
+        private void More_Click(object sender, RoutedEventArgs e)
         {
-            addressBar.Text = "https://xuanxuan1231.tk";
+            MyWebView.Source = new Uri("https://more.xuanxuan1231.tk");
         }
 
-        private void more_Click(object sender, RoutedEventArgs e)
+        private void Typecho_Click(object sender, RoutedEventArgs e)
         {
-            addressBar.Text = "https://more.xuanxuan1231.tk";
+            MyWebView.Source = new Uri("https://class.xuanxuan1231.tk");
         }
+       
 
-        private void typecho_Click(object sender, RoutedEventArgs e)
-        {
-            addressBar.Text = "https://class.xuanxuan1231.tk";
-        }
-        private AppWindow GetAppWindowForCurrentWindow()
-        {
-            IntPtr hWnd = WindowNative.GetWindowHandle(this);
-            WindowId wndId = Win32Interop.GetWindowIdFromWindow(hWnd);
-            return AppWindow.GetFromWindowId(wndId);
-        }
+       
 
     }
 }

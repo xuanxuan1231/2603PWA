@@ -43,8 +43,11 @@ namespace _2603PWA
         {
             m_window = new MainWindow();
             m_window.Activate();
-        }
+            m_window.ExtendsContentIntoTitleBar = true;
+          
 
+        }
+        
         private Window m_window;
 
         public static Window MainWindow { get; internal set; }

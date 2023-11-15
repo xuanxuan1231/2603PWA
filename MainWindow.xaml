@@ -20,23 +20,46 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
-        <TextBox Name="addressBar" Grid.Column="0" PlaceholderText="地址"/>
-        <Button x:Name="myButton" Style="{StaticResource AccentButtonStyle}" Grid.Column="1" HorizontalAlignment="Left" Click="myButton_Click">启动</Button>
-        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="2" >
+        <Grid x:Name="AppTitleBar"  
+      Height="48">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="LeftPaddingColumn" Width="0"/>
+                <ColumnDefinition x:Name="IconColumn" Width="Auto"/>
+                <ColumnDefinition x:Name="TitleColumn" Width="Auto"/>
+                <ColumnDefinition x:Name="LeftDragColumn" Width="*"/>
+                <ColumnDefinition x:Name="SearchColumn" Width="Auto"/>
+                <ColumnDefinition x:Name="RightDragColumn" Width="*"/>
+                <ColumnDefinition x:Name="RightPaddingColumn" Width="0"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="TitleBarIcon" Source="/Images/WindowIcon.png"
+           Grid.Column="1"
+           Width="16" Height="16"
+           Margin="8,0,0,0"/>
+            <TextBlock x:Name="TitleTextBlock" 
+               Text="2026届3班（PWA）" 
+               Style="{StaticResource CaptionTextBlockStyle}"
+               Grid.Column="2"
+               VerticalAlignment="Center"
+               Margin="4,0,0,0"/>
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="3">
 
 
-            <Button x:Name="typecho" Click="typecho_Click">
-                Typecho
-            </Button>
-            <Button x:Name="hugo" Click="hugo_Click">
-                Hugo
-            </Button>
-            <Button x:Name="more" Click="more_Click">
-                其他
-            </Button>
-        </StackPanel>
+                <Button x:Name="typecho" Click="Typecho_Click">
+                    Typecho
+                </Button>
+                <Button x:Name="hugo" Click="Hugo_Click">
+                    Hugo
+                </Button>
+                <Button x:Name="more" Click="More_Click">
+                    其他
+                </Button>
+            </StackPanel>
+        </Grid>
+        <!-- <TextBox Name="addressBar" Grid.Column="0" PlaceholderText="地址" HorizontalAlignment="Left" Grid.Row="1" Grid.RowSpan="1" VerticalAlignment="Top"/>
+        <Button x:Name="myButton" Style="{StaticResource AccentButtonStyle}" Grid.Column="0" Grid.Row="1" Grid.RowSpan="1" HorizontalAlignment="Right" Click="myButton_Click" VerticalAlignment="Top">启动</Button>-->
+        
         <!-- <Button Grid.Row="1">test</Button> -->
-        <controls:WebView2 x:Name="MyWebView" Grid.ColumnSpan="3" Grid.Row="1" Source="https://www.microsoft.com" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <controls:WebView2 x:Name="MyWebView" Grid.ColumnSpan="3"  Grid.Row="2" Source="https://www.microsoft.com/" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
 
     </Grid>
 </Window>

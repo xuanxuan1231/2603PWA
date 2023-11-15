@@ -14,6 +14,15 @@
     <PackageCertificateThumbprint>231641DCCF9F037A76A98320D99BD11AD25B81D1</PackageCertificateThumbprint>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="BlankPage1.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="BlankPage1.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Remove="BlankPage1.xaml" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Include="Assets\SplashScreen.scale-200.png" />
