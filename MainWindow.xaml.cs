@@ -34,8 +34,10 @@ namespace _2603PWA
         public MainWindow()
         {
             this.InitializeComponent();
+            m_AppWindow = GetAppWindowForCurrentWindow();
+            m_AppWindow.Title = "2026½ì3°à£¨PWA£©";
             //MyWebView.NavigationStarting += EnsureHttps;
-            
+
         }
 
 
@@ -83,9 +85,13 @@ namespace _2603PWA
         {
             MyWebView.Source = new Uri("https://class.xuanxuan1231.tk");
         }
-       
+        private AppWindow GetAppWindowForCurrentWindow()
+        {
+            IntPtr hWnd = WindowNative.GetWindowHandle(this);
+            WindowId wndId = Win32Interop.GetWindowIdFromWindow(hWnd);
+            return AppWindow.GetFromWindowId(wndId);
+        }
 
-       
 
     }
 }
