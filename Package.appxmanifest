@@ -10,7 +10,7 @@
   <Identity
     Name="5d2b04c4-5cad-435d-b608-7190e31f3387"
     Publisher="CN=2026届3班"
-    Version="0.5.1.0" />
+    Version="0.8.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="5d2b04c4-5cad-435d-b608-7190e31f3387" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
